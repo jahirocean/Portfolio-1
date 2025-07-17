@@ -2,8 +2,16 @@
 
 import { motion } from "framer-motion";
 import { PROJECTS } from "@/constants/projects";
+import { useEffect, useState } from "react";
+
 
 export default function ProjectSection() {
+ const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">

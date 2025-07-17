@@ -22,7 +22,7 @@ export const PROJECTS = [
     description:
       "Real-time weather application with 5-day forecast, location search, and interactive maps.",
     tags: ["React", "OpenWeather API", "Chart.js", "Geolocation API"],
-    imageUrl: "/projects/weather.png",
+    imageUrl: "/projects/weather.webp",
     githubUrl: "https://github.com/yourusername/weather-dashboard",
     liveUrl: "https://weather-dashboard.vercel.app",
   },

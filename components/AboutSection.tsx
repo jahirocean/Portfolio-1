@@ -2,8 +2,17 @@
 
 import { motion } from "framer-motion";
 import { SKILLS } from "@/constants/skills";
+import { useEffect, useState } from "react";
+
 
 export default function AboutSection() {
+
+   const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="about" className="py-20 bg-slate-900/50">
       <div className="container mx-auto px-4">
