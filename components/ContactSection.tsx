@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import ClientSideOnly from "./ClientSideOnly";
 
 export default function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -42,6 +43,7 @@ export default function ContactSection() {
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error("Failed to send message:", error);
       setSubmitStatus({
         success: false,
         message: "Oops! Something went wrong. Please try again later.",
@@ -55,6 +57,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-slate-900/50">
       <div className="container mx-auto px-4">
+        <ClientSideOnly>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,6 +74,9 @@ export default function ContactSection() {
             back to you as soon as possible
           </p>
         </motion.div>
+        </ClientSideOnly>
+
+        <ClientSideOnly>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -158,6 +164,7 @@ export default function ContactSection() {
             </button>
           </form>
         </motion.div>
+        </ClientSideOnly>
       </div>
     </section>
   );

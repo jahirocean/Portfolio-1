@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SKILLS } from "@/constants/skills";
 import { useEffect, useState } from "react";
+import ClientSideOnly from "./ClientSideOnly";
 
 
 export default function AboutSection() {
@@ -16,6 +17,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-slate-900/50">
       <div className="container mx-auto px-4">
+        <ClientSideOnly>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,8 +34,10 @@ export default function AboutSection() {
             current skills mostly in terms of programming and technology
           </p>
         </motion.div>
+        </ClientSideOnly>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          <ClientSideOnly>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,6 +66,9 @@ export default function AboutSection() {
               </p>
             </div>
           </motion.div>
+          </ClientSideOnly>
+
+          <ClientSideOnly>
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -89,6 +96,7 @@ export default function AboutSection() {
               ))}
             </div>
           </motion.div>
+          </ClientSideOnly>
         </div>
       </div>
     </section>

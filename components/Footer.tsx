@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="text-2xl font-bold text-sky-400">
-              YourName
+              Jahir Raihan
             </Link>
             <p className="text-slate-400 mt-2">
               © {new Date().getFullYear()} All Rights Reserved

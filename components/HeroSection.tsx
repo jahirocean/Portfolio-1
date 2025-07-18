@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import ClientSideOnly from "./ClientSideOnly";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -19,6 +20,7 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 text-center">
         {mounted ? (
+          <ClientSideOnly>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,10 +56,11 @@ export default function HeroSection() {
               </motion.a>
             </div>
           </motion.div>
+          </ClientSideOnly>
         ) : (
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Hi, I'm <span className="text-sky-400">Your Name</span>
+              Hi, I'm <span className="text-sky-400">Jahir Raihan</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium mb-8 text-slate-300">
               Full Stack Developer
@@ -84,6 +87,7 @@ export default function HeroSection() {
         )}
 
         {mounted && (
+          <ClientSideOnly>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -104,6 +108,7 @@ export default function HeroSection() {
               </div>
             </a>
           </motion.div>
+          </ClientSideOnly>
         )}
       </div>
     </section>
